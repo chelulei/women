@@ -39,18 +39,18 @@
                                             <li><a href="#">Whow we are </a></li>
                                             <li><a href="#">What we do</a></li>
                                             <li><a href="{{route('backend.blogs.index')}}">Our Stories</a></li>
-                                            <li><a href="contact.php">Contact Us</a></li>
+                                            <li><a href="#">Contact Us</a></li>
                                               @if (Route::has('login'))
-                                            @auth
-                                                <li class="nav-item active">
-                                                    <a class="nav-link" href="{{ url('/home') }}">Home <span class="sr-only">(current)</span></a>
+                                              @auth
+                                                <li>
+                                                    <a href="{{ url('/home') }}">Home <span class="sr-only">(current)</span></a>
                                                 </li>
-                                            @else
-                                                <li class="nav-item">
-                                                    <a class="nav-link login" href="{{ route('login') }}">Login</a>
+                                               @else
+                                                <li>
+                                                    <a  href="{{ route('login') }}">Login</a>
                                                 </li>
-                                                <li class="nav-item">
-                                                    <a class="nav-link" href="{{ route('register') }}">Register</a>
+                                                <li>
+                                                    <a href="{{ route('register') }}">Register</a>
                                                 </li>
                                             @endauth
                                         @endif

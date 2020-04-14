@@ -15,8 +15,10 @@
 //     return view('welcome');
 // });
 
-// Auth::routes(['verify' => false]);
+Auth::routes();
 
+
+Route::group(['middleware' => ['auth']], function() {
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/', [
@@ -58,3 +60,5 @@ Route::resource('/categories', 'CategoryController', ['as' => 'backend']);
 
 Route::resource('/blogs', 'BlogController', ['as' => 'backend']);
 Route::get('/blgs', 'BlogController@blogs')->name('blgs');
+
+});
